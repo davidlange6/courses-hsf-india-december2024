@@ -1,21 +1,26 @@
 name: hsf-india
 channels:
   - defaults
-  - conda-forge
+  - nvidia/label/cuda-12.4.0
 dependencies:
   - python=3.10
+  - cuda=12.4 
+  - cudnn=8.9.7
+  - cuda-nvcc
   - pip
-#  - emacs - broken after install, so just remove it
   - zstandard
   - zstd
   - clang-tools
   - fsspec
   - lz4
+  - pyarrow
   - python-xxhash
-  - root
-  - cmake #needed to compile Geant examples
-  - openssh #otherwise ssh is broken due to bug with openssl it seems
+  # rapids drops support for the SSL/River GPUs after this release..
+  # older releases do not support python 3.11
+  - rapidsai::cudf=23.12.00
   - pip:
+      - tensorflow==2.16.1
+      - tensorrt
       - astunparse
       - awkward
       - dask
@@ -31,11 +36,11 @@ dependencies:
       - numba
       - numexpr
       - numpy
-      #cudf does not support pandas 2.0 until 24.04
+      #cudf does not support pandas 2.0 until 24.0
       - pandas==1.5.3
       - particle
       - protobuf
-      - pyarrow
+      - pycuda
       - pybind11
       - scikit-learn
       - tables
@@ -47,14 +52,14 @@ dependencies:
       - jax[cpu]
       - graphviz
       - dask-labextension==6.2.0
-      - tensorflow==2.16.1
-      - tensorflow-probability
-      - scikit-learn
-      - seaborn
-      - xgboost
-
+      - torch==2.3.0
+      - torchvision
+      - torchvision
+      - torchaudio
       
 variables:
-  LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib64/'"
-  QT_QPA_PLATFORM: "offscreen"
+  LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/'"
+  XLA_FLAGS: "'--xla_gpu_cuda_data_dir=$CONDA_PREFIX/'"
+# not needed for Delhi setup
+#  NUMBA_CUDA_ENABLE_MINOR_VERSION_COMPATIBILITY: "1"
   
