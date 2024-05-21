@@ -21,6 +21,7 @@ dependencies:
       - dask
       - dask-awkward
       - distributed
+      - dm-haiku
       - h5py
       - hepunits
       - hist
