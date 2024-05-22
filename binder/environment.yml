@@ -3,59 +3,9 @@ channels:
   - defaults
   - nvidia/label/cuda-12.4.0
 dependencies:
-  - python=3.10
-  - cuda=12.4 
-  - cudnn=8.9.7
   - cuda-nvcc
-  - pip
-  - zstandard
-  - zstd
-  - clang-tools
-  - fsspec
-  - lz4
-  - pyarrow
-  - python-xxhash
-  # rapids drops support for the SSL/River GPUs after this release..
-  # older releases do not support python 3.11
-  - rapidsai::cudf=23.12.00
-  - pip:
-      - tensorflow==2.16.1
-      - tensorrt
-      - astunparse
-      - awkward
-      - dask
-      - dask-awkward
-      - distributed
-      - h5py
-      - hepunits
-      - hist
-      - ipympl
-      - jupyterlab-deck
-      - jupyterlab-mathjax3
-      - matplotlib
-      - numba
-      - numexpr
-      - numpy
-      #cudf does not support pandas 2.0 until 24.0
-      - pandas==1.5.3
-      - particle
-      - protobuf
-      - pycuda
-      - pybind11
-      - scikit-learn
-      - tables
-      - uproot
-      - vector
-      - mplhep
-      - requests
-      - aiohttp
-      - jax[cpu]
-      - graphviz
-      - dask-labextension==6.2.0
-      - torch==2.3.0
-      - torchvision
-      - torchvision
-      - torchaudio
+  - libcurand
+  - libcurand-dev
       
 variables:
   LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/'"
