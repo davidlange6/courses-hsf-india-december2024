@@ -32,8 +32,8 @@ dependencies:
       - numba
       - numexpr
       - numpy
-      #cudf does not support pandas 2.0 until 24.04
-      - pandas==1.5.3
+      #cudf does not support pandas 2.0 until 24.04 (otherwise 1.5.3)
+      - pandas
       - particle
       - protobuf
       - pyarrow
@@ -47,8 +47,8 @@ dependencies:
       - aiohttp
       - jax[cpu]
       - graphviz
-      - dask-labextension==6.2.0
-      - tensorflow==2.16.1
+      - dask-labextension
+      - tensorflow
       - tensorflow-probability
       - scikit-learn
       - seaborn
