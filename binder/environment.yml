@@ -4,31 +4,29 @@ channels:
   - nvidia/label/cuda-12.4.1
 dependencies:
   - python=3.10
-#  - cuda=12.4 
-#  - cudnn=8.9.7
   - libcurand
   - libcurand-dev
   - cuda-minimal-build=12.4
   - nomkl #remove the large mkl lib stuff
   - pip
+#  - emacs - broken after install, so just remove it
   - zstandard
   - zstd
   - clang-tools
   - fsspec
   - lz4
-  - pyarrow
   - python-xxhash
-  # rapids drops support for the SSL/River GPUs after this release..
-  # older releases do not support python 3.11
-  - rapidsai::cudf=23.12.00
+  - pyarrow
+  - root
+  - cmake #needed to compile Geant examples
+  - openssh #otherwise ssh is broken due to bug with openssl it seems
   - pip:
-#      - tensorflow==2.16.1
-#      - tensorrt
       - astunparse
       - awkward
       - dask
       - dask-awkward
       - distributed
+      - dm-haiku
       - h5py
       - hepunits
       - hist
@@ -39,11 +37,11 @@ dependencies:
       - numba
       - numexpr
       - numpy
-      #cudf does not support pandas 2.0 until 24.0
-      - pandas==1.5.3
+      #cudf does not support pandas 2.0 until 24.04 (otherwise 1.5.3)
+      - pandas
       - particle
       - protobuf
-      - pycuda
+      - pyarrow
       - pybind11
       - scikit-learn
       - tables
@@ -54,11 +52,22 @@ dependencies:
       - aiohttp
       - jax[cpu]
       - graphviz
-      - dask-labextension==6.2.0
-      - torch==2.3.0
-      - torchvision
+      - dask-labextension
+      - tensorflow
+      - tensorflow-probability
+      - scikit-learn
+      - seaborn
+      - xgboost
+      - torch
+      #==2.3.0
       - torchvision
       - torchaudio
+
+      
+#variables:
+#  LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib64/'"
+#  QT_QPA_PLATFORM: "offscreen"
+# hum, the variables got out of sync..  
      
 variables:
   LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/'"
