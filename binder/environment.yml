@@ -55,6 +55,7 @@ dependencies:
       - dask-labextension
       - tensorflow
       - tensorflow-probability
+      - tensorrt
       - scikit-learn
       - seaborn
       - xgboost
