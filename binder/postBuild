@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-pip install tensorrt --extra-index-url https://pypi.nvidia.com
+#i can't see why i did this - lets try moving it to the build itself
+#pip install tensorrt --extra-index-url https://pypi.nvidia.com
 
 # pip appears to leave behind 4GB of stuff.. lets remove it.
 pip cache purge
