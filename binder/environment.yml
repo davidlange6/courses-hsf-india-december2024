@@ -23,6 +23,7 @@ dependencies:
   - pip:
       - astunparse
       - awkward
+      - cupy
       - dask
       - dask-awkward
       - distributed
@@ -43,6 +44,7 @@ dependencies:
       - protobuf
       - pyarrow
       - pybind11
+      - pycuda
       - scikit-learn
       - tables
       - uproot
