@@ -7,8 +7,10 @@ dependencies:
   - libcurand
   - libcurand-dev
   - cuda-minimal-build=12.4
+  - cupy
   - nomkl #remove the large mkl lib stuff
   - pip
+  - pycuda
 #  - emacs - broken after install, so just remove it
   - zstandard
   - zstd
@@ -23,7 +25,6 @@ dependencies:
   - pip:
       - astunparse
       - awkward
-      - cupy
       - dask
       - dask-awkward
       - distributed
@@ -44,7 +45,6 @@ dependencies:
       - protobuf
       - pyarrow
       - pybind11
-      - pycuda
       - scikit-learn
       - tables
       - uproot
