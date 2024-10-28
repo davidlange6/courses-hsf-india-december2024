@@ -1,12 +1,12 @@
 name: hsf-india
 channels:
   - defaults
-  - nvidia/label/cuda-12.4.1
+  - nvidia/label/cuda-12.5.1
 dependencies:
   - python=3.10
   - libcurand
   - libcurand-dev
-  - cuda-minimal-build=12.4
+  - cuda-minimal-build=12.5
   - cupy
   - nomkl #remove the large mkl lib stuff
   - pip
@@ -52,7 +52,7 @@ dependencies:
       - mplhep
       - requests
       - aiohttp
-      - jax[cpu]
+      - jax[cuda12]
       - graphviz
       - dask-labextension
       - tensorflow
