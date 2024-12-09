@@ -18,7 +18,7 @@ dependencies:
   - lz4
   - python-xxhash
   - pyarrow
-  - root
+#  - root
   - cmake #needed to compile Geant examples
   - openssh #otherwise ssh is broken due to bug with openssl it seems
   - pip:
