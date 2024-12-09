@@ -6,4 +6,8 @@ git clone https://github.com/hsf-india-december2024/MachineLearning
 git clone https://github.com/hsf-india-december2024/GPUPython
 git clone https://github.com/hsf-india-december2024/GPUCuda
 
+rm -rf binder
+rm -rf docker_info
+rm README.md
+
 exec "$@"
