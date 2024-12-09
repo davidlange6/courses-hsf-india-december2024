@@ -1,6 +1,9 @@
 #!/bin/bash
 
 #C++ introduction lectures
-git clone https://github.com/hsf-india-may2024/cpp_intro
+git clone https://github.com/hsf-india-december2024/ScientificPython
+git clone https://github.com/hsf-india-december2024/MachineLearning
+git clone https://github.com/hsf-india-december2024/GPUPython
+git clone https://github.com/hsf-india-december2024/GPUCuda
 
 exec "$@"
