@@ -3,7 +3,7 @@
 #C++ introduction lectures
 git clone https://github.com/hsf-india-december2024/ScientificPython
 git clone https://github.com/hsf-india-december2024/MachineLearning
-git clone https://github.com/hsf-india-december2024/GPUPython
+git clone https://github.com/hsf-india-december2024/PythonGPU
 git clone https://github.com/hsf-india-december2024/GPUCuda
 
 rm -rf binder
